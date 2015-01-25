@@ -1,5 +1,7 @@
 extends page
+include mixins/subjy-list
 
 block content
-  h1 Subjify
-  p Because we are not robots
+	h1 Subjify
+	p Because we are not robots
+	+subjy-list(subjies)
