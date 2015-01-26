@@ -1,0 +1,15 @@
+extends page
+
+block content
+	h1 Signup
+	if message && message.length > 0
+		div.flash-alert message
+	form(action="/signup" method="post")
+		div.email
+			label Email
+			input(type="text",name="email")
+		div.password
+			label Password
+			input(type="password",name="password")
+		button(type="submit") Signup
+	p Already have a login? go <a href="/login.html">there</a>
