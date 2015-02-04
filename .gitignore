@@ -1,6 +1,9 @@
 # MacOs
 *.DS_Store
 
+#css files
+*.css
+
 # Logs
 logs
 *.log

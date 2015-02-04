@@ -6,6 +6,7 @@ html
 	body
 		header
 			nav
+				a(href="/") <i class="subjify"></i> Subjify!
 				if (! user)
 					a.popup(data-popup="#login-block" href="#") Login
 					a.popup(data-popup="#signup-block" href="#") Signup
@@ -39,6 +40,7 @@ html
 							input(type="password",name="password")
 						button(type="submit") Signup
 		block content
+		footer
 		//javascript
 		script(src='//code.jquery.com/jquery-2.1.3.min.js')
 		script(src='/js/subjify.js')
