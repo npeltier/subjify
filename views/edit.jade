@@ -1,0 +1,11 @@
+extends page
+
+block content
+	form(action="/edit",method="post")
+		.subject
+			label Subject
+			input(type="text",name="subject")
+		.title
+			label Title
+			input(type="text",name="title")
+		button(type="submit") Signup

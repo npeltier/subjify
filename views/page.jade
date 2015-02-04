@@ -10,7 +10,7 @@ html
 					a.popup(data-popup="#login-block" href="#") Login
 					a.popup(data-popup="#signup-block" href="#") Signup
 				else
-					a(href="/profile.html") #{user.local.name}
+					a(href="/profile.html") #{user.name}
 				div#login-block
 					h1 Login
 					if message && message.length > 0
