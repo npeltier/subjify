@@ -10,7 +10,7 @@ var session = require('express-session');
 var flash = require('connect-flash');
 
 // db
-var dbConnect = process.env.DB.toString();
+var dbConnect = process.env.DB ? process.env.DB.toString() : 'localhost';
 mongoose.connect(dbConnect);
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
