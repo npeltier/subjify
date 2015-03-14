@@ -1,6 +1,7 @@
 @black: rgb(32, 33, 32);
 @blue: rgb(68, 122, 231);
 @green: rgb(42, 208, 109);
+@white : white;
 
 body {
 	min-height: 100%;
@@ -35,6 +36,7 @@ body {
 			padding-top: 0;
 			margin-left: auto;
 			margin-right: auto;
+			min-width: 10em;
 			.subject {
 				float:left;
 				width: 100%;
@@ -59,7 +61,7 @@ body {
 		padding-bottom: 100%;
 		article {
 			width: 33%;
-			padding-top: 10%;
+			padding-top: 10em;
 			margin-left: auto;
 			margin-right: auto;
 			text-align: center;
@@ -68,6 +70,13 @@ body {
 			}
 		}
 	}
+
+	i {
+		overflow: hidden;
+		display: block;
+		fill: @white;
+	}
 }
 
-@import "site/auth.less";
+@import "icons.less";
+@import "auth.less";

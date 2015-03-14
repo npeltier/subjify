@@ -1,9 +1,11 @@
 extends page
 include mixins/subjy-list
+include mixins/svg
 
 block content
 	.home
 		article
+			+svg("logo", "main-logo")
 			h1 Subjify
 			p Because we are not robots
 		+subjy-list(subjies)

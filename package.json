@@ -2,9 +2,6 @@
   "name": "subjify",
   "version": "0.0.0",
   "private": true,
-  "scripts": {
-    "start": "node ./bin/www"
-  },
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.8.4",
@@ -20,5 +17,13 @@
     "passport": "^0.2.1",
     "passport-local": "^1.0.0",
     "serve-favicon": "^2.1.7"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
+    "grunt-svg-sprite": "^1.0.19"
+  },
+  "scripts": {
+  	"postinstall": "grunt icons"
   }
 }
