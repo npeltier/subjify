@@ -1,0 +1,66 @@
+body > header {
+	background-color: @black;
+	height: 2rem;
+	top: 0;
+	left: 0;
+	position: fixed;
+	z-index: 10000;
+	padding-left:10%;
+	padding-top:0.5rem;
+	width: 100%;
+	> nav {
+		display:block;
+		float:left;
+		width:10%;
+		> a {
+			width:100%;
+			> * {
+				margin-left: 1%;
+				display:block;
+				float:left;
+			}
+		}
+	}
+	> form.search {
+		display: block;
+		width: 30%;
+		margin-left: 15%;
+		> input {
+			width:80%;
+			border-radius: 0.7rem;
+			height:1rem;
+			padding-left: 3%;
+			border: none;
+		}
+		> * {
+			float:left;
+			display:block;
+			margin-left: 1%;
+		}
+	}
+	> ul.status {
+		list-style: none;
+		margin-top: 0;
+		margin-left: 5%;
+		float: left;
+		width: 20%;
+		> li > a{
+			margin-left:1rem;
+		}
+	}
+	a, a:visited {
+		float:left;
+		color: white;
+		font-weight: 200;
+		text-decoration: none;
+		> span {
+			vertical-align:;
+		}
+	}
+	> .menu {
+		display:block;
+		float: left;
+		margin-left: 10%;
+		font-size: 1.3rem;
+	}
+}
