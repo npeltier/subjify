@@ -2,6 +2,7 @@
 @blue: rgb(68, 122, 231);
 @green: rgb(42, 208, 109);
 @white : white;
+@topbarHeight: 2rem;
 
 body {
 	min-height: 100%;
@@ -12,33 +13,6 @@ body {
 	p {
 		text-align: justify;
 	}
-	li.subjy {
-		list-style: none;
-		border-radius: 5px;
-		background-color: @blue;
-		margin-left: 2em;
-		margin-right: 2em;
-		overflow: auto;
-		article {
-			overflow: auto;
-			padding-top: 0;
-			margin-left: auto;
-			margin-right: auto;
-			min-width: 10em;
-			.subject {
-				float:left;
-				width: 100%;
-			}
-			.title {
-				float:left;
-				width: 100%;
-			}
-			.author {
-				display: block;
-				float:right;
-			}
-		}
-	}
 	footer {
 		background-color: @black;
 		width: 100%;
@@ -47,7 +21,7 @@ body {
 	.home {
 		background: linear-gradient(90deg, @blue, @green);
 		padding-bottom: 100%;
-		article {
+		main {
 			width: 33%;
 			padding-top: 10em;
 			margin-left: auto;
@@ -56,6 +30,10 @@ body {
 			p {
 				text-align: center;
 			}
+		}
+		.subjy {
+			margin-left: auto;
+			margin-right: auto;
 		}
 	}
 
@@ -68,4 +46,5 @@ body {
 
 @import "icons.less";
 @import "topbar.less";
+@import "subjy.less";
 @import "auth.less";

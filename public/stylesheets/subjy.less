@@ -1,0 +1,56 @@
+body {
+	.subjy {
+		border-radius: 5px;
+		background-color: @blue;
+		margin-left: 2em;
+		margin-right: 2em;
+		padding-top: 0;
+		min-width: 15rem;
+		max-width: 50rem;
+		.quote {
+			overflow: auto;
+			display: block;
+			min-width: 9rem;
+			max-width: 29rem;
+			margin-left: auto;
+			margin-right: auto;
+			.subjy-icon {
+				float: left;
+				display: block;
+				margin-right: 1rem;
+				margin-top: 0.5rem;
+			}
+			h4 {
+				text-align:left;
+				display:inline-block;
+				min-width:9rem;
+				margin-bottom:0;
+				margin-top:0.5rem;
+				font-weight:100;
+			}
+			.title {
+				text-align:left;
+				min-width:9rem;
+				display:inline-block;
+				color: @white;
+				margin-top:0;
+			}
+			p.author {
+				float:right;
+				width:10%;
+				margin-top: 0;
+				padding-right: 2em;
+			}
+		}
+		.mask {
+			display: none;
+		}
+	}
+	.title > .subjy {
+		margin-top: @topbarHeight + 1rem;
+		margin-left: 1rem;
+	}
+	li .subjy {
+		list-style: none;
+	}
+}

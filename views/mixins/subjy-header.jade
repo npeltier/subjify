@@ -1,0 +1,14 @@
+include svg
+
+mixin subjy-header(subj)
+	article.subjy
+		link(href='http://fonts.googleapis.com/css?family=Pirata+One' rel='stylesheet' type='text/css')
+		.quote
+			+svg("quote", "subjy-icon")
+			h4.subject /#{subj.subject}
+			a(href="/chico/subjies/glenn_gould")
+				q(class="title", style="font-family: 'Pirata one', 'Georgia'; font-size:25px") #{subj.title}
+			p.author
+				@#{subj.author || 'Chico'}
+		.mask
+			+svg("arrow", "subjy-arrow")

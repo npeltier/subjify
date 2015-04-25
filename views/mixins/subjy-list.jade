@@ -1,9 +1,6 @@
+include subjy-header
 mixin subjy-list(subjies)
 	ul
 		each subjy in subjies
 			li.subjy
-				article
-					header
-						h3.subject /#{subjy.subject}
-					p.title #{subjy.title}
-					p.author @#{subjy.author || 'Chico'}
+				+subjy-header(subjy)
