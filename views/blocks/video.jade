@@ -1,0 +1,8 @@
+mixin video(bl)
+	.block-content
+		p.
+			#{bl.intro}
+		if bl.video
+			iframe(class="video", src="//www.youtube.com/embed/#{bl.video.ref}",frameborder="0",allowfullscreen)
+		p.
+			#{bl.outro}

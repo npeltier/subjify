@@ -40,11 +40,15 @@ Subjy.getSample = function() {
 		"blocks":[{
 				"title": "La précision du maître à travers le temps",
 				"type": "video",
-				"text": "Je n’ai pas découvert Glenn Gould en voyant cette vidéo. Non, j’ai reçu la passion pour Glenn Gould en héritage de longues heures passées avec un ami à boire des bières fortes. Mais, n’ayant pas l’opportunité (malheureusement) chers lecteurs de partager  des bulles houblonées avec vous, j’ai choisi de commencer votre initiation Glenn Gouldesse par ce montage.<br>Il me parait essentiel d’apprécier avant tout la prouesse technique du virtuose à travers les ages. La mélodie de cette Fugue à 4, n’a pas variée d’un pouce de 1963 à 1980 ! Le rythme, l’intonation de chaque note est restée strictement la même...<br><br>Je vous laisse apprécier cet instant de pur prouesse technique :"
+				"intro": "Je n’ai pas découvert Glenn Gould en voyant cette vidéo. Non, j’ai reçu la passion pour Glenn Gould en héritage de longues heures passées avec un ami à boire des bières fortes. Mais, n’ayant pas l’opportunité (malheureusement) chers lecteurs de partager  des bulles houblonées avec vous, j’ai choisi de commencer votre initiation Glenn Gouldesse par ce montage.<br>Il me parait essentiel d’apprécier avant tout la prouesse technique du virtuose à travers les ages. La mélodie de cette Fugue à 4, n’a pas variée d’un pouce de 1963 à 1980 ! Le rythme, l’intonation de chaque note est restée strictement la même...<br><br>Je vous laisse apprécier cet instant de pur prouesse technique :",
+				"video": {
+					"type":"youtube",
+					"ref": "qB76jxBq_gQ"
+				}
 			},{
-				"title": "La précision du maître à travers le temps",
-				"type": "video",
-				"text": "Je n’ai pas découvert Glenn Gould en voyant cette vidéo. Non, j’ai reçu la passion pour Glenn Gould en héritage de longues heures passées avec un ami à boire des bières fortes. Mais, n’ayant pas l’opportunité (malheureusement) chers lecteurs de partager  des bulles houblonées avec vous, j’ai choisi de commencer votre initiation Glenn Gouldesse par ce montage.<br>Il me parait essentiel d’apprécier avant tout la prouesse technique du virtuose à travers les ages. La mélodie de cette Fugue à 4, n’a pas variée d’un pouce de 1963 à 1980 ! Le rythme, l’intonation de chaque note est restée strictement la même...<br><br>Je vous laisse apprécier cet instant de pur prouesse technique :"
+				"title": "Une interprétation jazzy du classique",
+				"type": "text",
+				"text": "Les auditeurs de Gould n’en croient pas leurs oreilles en écoutant un tel piano : une technique des plus brillantes (les Variations Goldberg comptent parmi les pièces redoutables du répertoire pianistique), élégante, raffinée, un toucher souple et varié, une interprétation articulant les structures polyphoniques avec une inégalable clarté, émaillée aussi de singularités étonnantes sinon dérangeantes, d’une lenteur célébrante interrompue de traits de virtuosité époustouflants, de passages piqués et de lignes au phrasé passé à la loupe."
 			}
 		]
 	}
