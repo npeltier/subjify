@@ -17,10 +17,13 @@ block content
 		.content
 			each subjyBlock, index in subjy.blocks
 				h2.index ##{index + 1}
-				h2 #{subjyBlock.title}
+				h2.text #{subjyBlock.title}
 				case subjyBlock.type
 					when 'text'
 						+text(subjyBlock)
 					when 'video'
 						+video(subjyBlock)
 			+subjy-header()
+block script
+	if edit
+		script(src='/js/edit.js')
