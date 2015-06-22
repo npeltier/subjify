@@ -7,7 +7,7 @@ var Subjy = mongoose.model('Subjy', {
 	"title": { type: String, required: true},
 	"date": { type: Date, required: true},
 	"tags": { type: [String], index: true },
-	"author": { type: Number, required: true, ref: 'User'},
+	"author": { type: String	, required: true, ref: 'User'},
 	"blocks": [{
 		"title": { type: String, required: true},
 		"type": { type: String, required: true},

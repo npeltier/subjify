@@ -11,9 +11,9 @@ mixin subjy-header(subj)
 				a(href="/chico/subjies/glenn_gould")
 					p(class="title text", style="font-family: 'Pirata one', 'Georgia'") #{subj.title}
 			else
-				p.create.title Créez votre propre /subjy
+				a.popup(data-popup="#create-content", href="#create")
+					p.create.title Créez votre propre /subjy
 			if subj
-				cite
-					@#{subj.author || 'Chico'}
+				cite @#{subj.author || 'Chico'}
 		.mask
 			+svg("arrow", "subjy-arrow")
