@@ -1,16 +1,18 @@
 var mongoose = require('mongoose'),
-	User = require('./User');
+	User = require('./User'),
+	Url = require('../lib/url');
 var Subjy = mongoose.model('Subjy', {
 	"subject": { type: String, required: true},
-	"font": { type: Number, required: true, ref: 'Font'},
-	"rating": { type: Number, required: true},
-	"title": { type: String, required: true},
-	"date": { type: Date, required: true},
+	"slug": {type: String, required: true, index: true},
+	"font": { type: Number, ref: 'Font'},
+	"rating": { type: Number},
+	"title": { type: String},
+	"date": { type: Date},
 	"tags": { type: [String], index: true },
-	"author": { type: String	, required: true, ref: 'User'},
+	"author": { type: String, required: true, ref: 'User'},
 	"blocks": [{
-		"title": { type: String, required: true},
-		"type": { type: String, required: true},
+		"title": { type: String},
+		"type": { type: String},
 		"text": String
 	}]
 });
