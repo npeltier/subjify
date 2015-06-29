@@ -13,7 +13,7 @@ block content
 				ul
 					each tag in subjy.tags
 						li ##{tag}
-		+subjy-header(subjy)
+		+subjy-header(subjy, edit)
 		.content
 			each subjyBlock, index in subjy.blocks
 				h2.index ##{index + 1}
@@ -23,6 +23,9 @@ block content
 						+text(subjyBlock)
 					when 'video'
 						+video(subjyBlock)
+			if edit
+				div.newblock
+					span(title="Click to add a new block") +
 			+subjy-header()
 block script
 	if edit

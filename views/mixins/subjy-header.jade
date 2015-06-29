@@ -1,6 +1,6 @@
 include svg
 
-mixin subjy-header(subj)
+mixin subjy-header(subj, edit)
 	blockquote(class="subjy-header", style="#{subj ? '':'background-color:black;'}")
 		link(href='http://fonts.googleapis.com/css?family=Pirata+One' rel='stylesheet' type='text/css')
 		.quote
@@ -8,8 +8,12 @@ mixin subjy-header(subj)
 			if subj
 				h4.subject /#{subj.subject}
 			if subj
-				a(href="/chico/subjies/glenn_gould")
-					p(class="title text", style="font-family: 'Pirata one', 'Georgia'") #{subj.title}
+				if !edit
+					a(href="/chico/subjies/#{subj.subject}")
+						p(class="title text", style="font-family: 'Pirata one', 'Georgia'") #{subj.title}
+				if edit
+					- title = subj.title ? subj.title : 'Insert title'
+					p(class="title text", data-name="title" style="font-family: 'Pirata one', 'Georgia'") #{title}
 			else
 				a.popup(data-popup="#create-content", href="#create")
 					p.create.title Créez votre propre /subjy
