@@ -1,10 +1,17 @@
 $(".text").attr("contenteditable","true");
-$(".text").blur(function(evt){
-	var data = {};
+
+var postEdit = function(evt){
+	var data = {},
+		block = $(this).closest("[data-block]").data("block"),
+		url = document.location.pathname + "/blocks/" + block;
 	data[$(this).data("name")] = $(this).html().replace("<br>","");
 	$.ajax({
   		method: "POST",
-  		url: document.location.pathname,
+  		url: url,
   		data: data
 	});
-});
+};
+
+
+$(".text").blur(postEdit);
+$(".newblock").click(postEdit);

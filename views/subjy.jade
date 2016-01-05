@@ -7,7 +7,8 @@ include blocks/video
 block content
 	main.subjy
 		.side
-			+subjy-header()
+			if ! edit
+				+subjy-header()
 			.tags
 				h4 Tags associés
 				ul
@@ -16,17 +17,19 @@ block content
 		+subjy-header(subjy, edit)
 		.content
 			each subjyBlock, index in subjy.blocks
-				h2.index ##{index + 1}
-				h2.text #{subjyBlock.title}
-				case subjyBlock.type
-					when 'text'
-						+text(subjyBlock)
-					when 'video'
-						+video(subjyBlock)
+				article(data-block=index)
+					h2.index ##{index + 1}
+					h2.text #{subjyBlock.title}
+					case subjyBlock.type
+						when 'text'
+							+text(subjyBlock)
+						when 'video'
+							+video(subjyBlock)
 			if edit
-				div.newblock
+				div.newblock(data-block=subjy.blocks.length)
 					span(title="Click to add a new block") +
-			+subjy-header()
+			if ! edit
+				+subjy-header()
 block script
 	if edit
 		script(src='/js/edit.js')
