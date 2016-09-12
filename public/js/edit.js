@@ -6,9 +6,9 @@ var postEdit = function(evt){
 		url = document.location.pathname + "/blocks/" + block;
 	data[$(this).data("name")] = $(this).html().replace("<br>","");
 	$.ajax({
-  		method: "POST",
-  		url: url,
-  		data: data
+		method: "POST",
+		url: url,
+		data: data
 	});
 };
 

@@ -1,13 +1,13 @@
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
-var passport = require('passport');
-var session = require('express-session');
-var flash = require('connect-flash');
+var express = require('express'),
+    path = require('path'),
+    favicon = require('serve-favicon'),
+    logger = require('morgan'),
+    cookieParser = require('cookie-parser'),
+    bodyParser = require('body-parser'),
+    mongoose = require('mongoose'),
+    passport = require('passport'),
+    session = require('express-session'),
+    flash = require('connect-flash');
 
 // db
 var dbConnect = process.env.DB ? process.env.DB.toString() : 'localhost';
@@ -20,7 +20,7 @@ db.once('open', function (callback) {
 	app.set('port', process.env.PORT || 3000);
 	// view engine setup
 	app.set('views', path.join(__dirname, 'views'));
-	app.set('view engine', 'jade');
+	app.set('view engine', 'pug');
 
 	// uncomment after placing your favicon in /public
 	//app.use(favicon(__dirname + '/public/favicon.ico'));

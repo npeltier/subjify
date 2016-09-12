@@ -1,27 +1,22 @@
 {
   "name": "subjify",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "bcrypt-nodejs": "0.0.3",
-    "body-parser": "^1.8.4",
-    "connect-flash": "^0.1.1",
-    "cookie-parser": "^1.3.3",
-    "debug": "^2.0.0",
-    "express": "^4.9.8",
-    "express-session": "^1.10.1",
-    "jade": "^1.6.0",
-    "less-middleware": "1.0.x",
-    "mongoose": "^3.8.22",
-    "morgan": "^1.3.2",
-    "passport": "^0.2.1",
-    "passport-local": "^1.0.0",
-    "serve-favicon": "^2.1.7",
-	"grunt": "^0.4.5",
-    "grunt-cli": "^0.1.13",
-    "grunt-svg-sprite": "^1.0.19"
-  },
-  "scripts": {
-  	"postinstall": "grunt icons"
+    "bcrypt-nodejs": "*",
+    "body-parser": "*",
+    "bson": "*",
+    "connect-flash": "*",
+    "cookie-parser": "*",
+    "debug": "*",
+    "express": "*",
+    "express-session": "*",
+    "less-middleware": "^2.2.0",
+    "mongoose": "^4.6.0",
+    "morgan": "*",
+    "passport": "^0.3.2",
+    "passport-local": "*",
+    "pug": "^0.1.0",
+    "serve-favicon": "*"
   }
 }
