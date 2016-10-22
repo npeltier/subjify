@@ -1,0 +1,14 @@
+extends page.pug
+
+block content
+	.container-fluid
+		.jumbotron
+			h2 <a class='author'>#{subjy.author.t}</a> thinks that #{subjy.title}
+			p inspired by <a class='author'>#{subjy.inspiration.author.t}</a> who thinks that <a href="#">#{subjy.inspiration.title}</a>
+		each subjyBlock, index in subjy.blocks
+			article(data-block=index)
+				h2.index ##{index + 1}
+				p #{subjyBlock.t}
+		if edit
+			div.newblock(data-block=subjy.blocks.length)
+				span(title="Click to add a new block") +
