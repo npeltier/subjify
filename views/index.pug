@@ -3,9 +3,16 @@ extends page.pug
 block content
 	.container-fluid
 		.jumbotron
-			h2= title
+			h2= name
 			p from path to path
 			p
 				a.btn.btn-primary.btn-lg(href="#", role="button") What do you think?
-		each subjy, index in subjies
-			p <a class='author'>#{subjy.author.t}</a> thinks that <a href="/#{subjy.author.s}/subjies/#{subjy.subject.s}">#{subjy.title}</a>
+		h2 Subjies
+		each subjy in subjies
+			p <a href="/#{subjy.id}">#{subjy.name}</a>
+		h2 Tags
+		each tag in tags
+			p <a href="/tags/#{tag.id}">#{tag.name}</a>
+		h2 Authors
+		each author in authors
+			p <a href="/authors/#{author.id}">#{author.name}</a>

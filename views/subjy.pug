@@ -3,11 +3,11 @@ extends page.pug
 block content
 	.container-fluid
 		.jumbotron
-			h2 <a class='author' href='/authors/#{subjy.a.id}'>#{subjy.a.name}</a> <small>thinks that</small> #{subjy.p.title}
-			p inspired by <a class='author' href='/authors/#{subjy.inspired_by.a.id}'>#{subjy.inspired_by.a.name}</a> who thinks that <a href="/#{subjy.inspired_by.p.slug}">#{subjy.inspired_by.p.title}</a>
+			h2 <a class='author' href='/authors/#{subjy.a.id}'>#{subjy.a.name}</a> <small>thinks that</small> #{subjy.p.name}
+			p inspired by <a class='author' href='/authors/#{subjy.inspired_by.a.id}'>#{subjy.inspired_by.a.name}</a> who thinks that <a href="/#{subjy.inspired_by.p.id}">#{subjy.inspired_by.p.name}</a>
 			ul.nav.nav-pills.tags
 				each tag in subjy.t
-					li.active(role=presentation) <a href="/tags/#{tag.id}">#{tag.title}</a>
+					li.active(role=presentation) <a href="/tags/#{tag.id}">#{tag.name}</a>
 						
 		each block, index in subjy.b
 			article(data-block=index)

@@ -39,8 +39,8 @@ var express = require('express'),
 						app.use(cookieParser());
 						app.use(require('less-middleware')(path.join(__dirname, 'public')));
 						app.use(express.static(path.join(__dirname, 'public')));
+						console.info("initializing routes");
 						require('./lib/routes')(app);
-						console.info("about to start the server");
 						var server = app.listen(app.get('port'), function() {
 						  console.log('Express server listening on port ' + server.address().port);
 						});
