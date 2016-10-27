@@ -12,11 +12,12 @@
     "express": "*",
     "express-session": "*",
     "less-middleware": "^2.2.0",
-    "mongoose": "^4.6.0",
     "morgan": "*",
+    "neo4j-driver": "^1.0.3",
     "passport": "^0.3.2",
     "passport-local": "*",
     "pug": "^0.1.0",
+	"q": "1.4.1",
     "serve-favicon": "*"
   }
 }

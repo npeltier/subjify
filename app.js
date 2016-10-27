@@ -4,44 +4,47 @@ var express = require('express'),
     logger = require('morgan'),
     cookieParser = require('cookie-parser'),
     bodyParser = require('body-parser'),
-    mongoose = require('mongoose'),
     passport = require('passport'),
     session = require('express-session'),
-    flash = require('connect-flash');
-
-// db
-var dbConnect = process.env.DB ? process.env.DB.toString() : 'localhost';
-mongoose.connect(dbConnect);
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function (callback) {
-	console.log('db connection opened');
-	var app = express();
-	app.set('port', process.env.PORT || 3000);
-	// view engine setup
-	app.set('views', path.join(__dirname, 'views'));
-	app.set('view engine', 'pug');
-
-	// uncomment after placing your favicon in /public
-	//app.use(favicon(__dirname + '/public/favicon.ico'));
-	app.use(logger('dev'));
-	app.use(bodyParser.json());
-	app.use(bodyParser.urlencoded({ extended: false }));
-	app.use(cookieParser());
-	app.use(require('less-middleware')(path.join(__dirname, 'public')));
-	app.use(express.static(path.join(__dirname, 'public')));
-
-
-	// required for passport
-	require('./lib/passport')(app, passport);
-	app.use(session({ secret: 'k123.?&=KL-nqsd@éx;D0)941sam§' })); // session secret
-	app.use(passport.initialize());
-	app.use(passport.session()); // persistent login sessions
-	app.use(flash());
-	require('./lib/routes')(app, passport);
-
-	var server = app.listen(app.get('port'), function() {
-	  console.log('Express server listening on port ' + server.address().port);
+    flash = require('connect-flash'),
+	fs = require('fs'),
+	neo4j = require('neo4j-driver').v1,
+	driver = neo4j.driver("bolt://localhost", neo4j.auth.basic("neo4j", "admin")),
+	neo4jSession = driver.session();
+	neo4jSession.run("match (n) detach delete n").then(
+		function() {
+			console.info("cleaned up current graph");
+			fs.readFile('./sample.txt', 'utf8',
+				function (err,data) {
+					if (err) {
+						console.error(err);
+						return;
+					}
+					neo4jSession.run(data)
+					.catch(function( error) {
+						console.error("unable to start with sample data :" + error);
+					})
+					.then( function( result ) {
+						console.log('sample data created');
+						neo4jSession.close();
+						driver.close();
+						var app = express();
+						app.set('port', process.env.PORT || 3000);
+						// view engine setup
+						app.set('views', path.join(__dirname, 'views'));
+						app.set('view engine', 'pug');
+						app.use(logger('dev'));
+						app.use(bodyParser.json());
+						app.use(bodyParser.urlencoded({ extended: false }));
+						app.use(cookieParser());
+						app.use(require('less-middleware')(path.join(__dirname, 'public')));
+						app.use(express.static(path.join(__dirname, 'public')));
+						require('./lib/routes')(app);
+						console.info("about to start the server");
+						var server = app.listen(app.get('port'), function() {
+						  console.log('Express server listening on port ' + server.address().port);
+						});
+						module.exports = app;
+				});
+			});
 	});
-	module.exports = app;
-});
