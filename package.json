@@ -16,8 +16,9 @@
     "neo4j-driver": "^1.0.3",
     "passport": "^0.3.2",
     "passport-local": "*",
+    "passport-twitter": "^1.0.4",
     "pug": "^0.1.0",
-	"q": "1.4.1",
+    "q": "1.4.1",
     "serve-favicon": "*"
   }
 }

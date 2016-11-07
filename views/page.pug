@@ -8,6 +8,44 @@ html
 		script(src='//code.jquery.com/jquery-2.1.3.min.js')
 		script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
 	body
+		.modal.fade#login-content(tabindex="-1",role="dialog")
+			.modal-dialog(role="document")
+				.modal-content
+					.modal-header
+						button.close(type="button",data-dismiss="modal",aria-label="Close")
+							span(aria-hidden="true") &times;
+						h4.modal-title(id="myModalLabel") Login
+					.modal-body
+						form
+							.form-group
+								label.control-label(for="username") Username:
+								input.form-control(type=text,id="username")
+							.form-group
+								label.control-label(for="password") Password:
+								input.form-control(type=password,id="password")
+					.modal-footer
+						button.btn.btn-default(type="button",data-dismiss="modal") Close
+						button.btn.btn-primary(type="button") Login
+		.modal.fade#signup-content(tabindex="-1",role="dialog")
+			.modal-dialog(role="document")
+				.modal-content
+					.modal-header
+						button.close(type="button",data-dismiss="modal",aria-label="Close")
+							span(aria-hidden="true") &times;
+						h4.modal-title(id="myModalLabel") Join Subjify today
+					.modal-body
+						form
+							.form-group
+								label.control-label(for="username") Username:
+								input.form-control(type=text,id="username")
+							.form-group
+								label.control-label(for="password") Password:
+								input.form-control(type=password,id="password")
+					.modal-footer
+						button.btn.btn-default(type="button",data-dismiss="modal") Close
+						button.btn.btn-default(type="button")
+							img(alt="Sign in with twitter" src="/img/sign-in-with-twitter-link.png")
+						button.btn.btn-primary(type="button") Signup
 		header
 			nav.navbar.navbar-pills
 				.container-fluid
@@ -23,6 +61,16 @@ html
 							.form-group
 								input.form-control(type="text" placeholder="Search")
 							button.btn.btn-success(type="submit") <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+						ul.nav.navbar-nav.pull-right
+							if (! user)
+								li
+									a.popup(data-toggle="modal" data-target="#login-content", href="#") login
+								li
+									a.popup(data-toggle="modal" data-target="#signup-content", href="#") signup
+							else
+								li
+									a(href="/profile/#{user.name}.html") #{user.name}
+
 		main
 			block content
 		footer

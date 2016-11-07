@@ -1,5 +1,5 @@
-create (f:Author {id:"francois", name:"François"}),
-(t:Author {id:"tom", name:"Tom"}),
+create (f:User {id:"francois", name:"François"}),
+(t:User {id:"tom", name:"Tom"}),
 (s:Subjy {id:"free-will-is-our-engine",name: "Free will is our engine",date: "2013-04-30"}),
 (bs1:Block {t:"there are nice people, there are bad people"}),
 (bs2:Block {t:"but basically at some point everybody has the choice to do the right thing"}),
